@@ -6,7 +6,7 @@ Clone the repo and run `npm install`. Then do `npm run dev` to start the mock se
 
 ### CORS
 
-Cors is set to allow calls from `appPort`, default is `8080`, change if needed in `index.js`.
+Cors is set to allow calls from `appPort`, default is `5173`, change if needed in `index.js`.
 
 ## Available endpoints
 
@@ -110,9 +110,8 @@ The inspector page at `/media/<asset_uid>` contains the results of Vidrovr’s p
 The following metadata should be rendered on this page:
 
 - Video Asset - the main video or image component
-- Asset Duration
-- Persons detected in the asset
-- Aggregated data of the detections, i.e. how many times a person was detected
+- Asset title
+- Aggregated data of the detections, i.e. how many times each person was detected
 - A plot showing persons versus number of times that person was detected. Design is free, could be bar chart, line, scatter, bubble, etc. your creativity is welcome
 
 Since the metadata inspection page is associated with specific assets retrieved via uuid at `/media/<asset_uid>`. Users should be able to enter an `asset_uid` parameter on the browser URL and have the metadata associated with that video rendered.
@@ -122,14 +121,13 @@ The metadata related to the video can be obtained via the `assets/asset_uid` API
 ### BONUS POINTS
 
 - Display a list of videos sorted in reverse chronological order of creation-date on a separate page accessible at url `/media`. This section of the UI is optional, you may choose to display the results for various videos by simply navigating to their URL directly.
-- Display a list of thumbnails as well as some basic information about the detected persons
-- A way to scroll the video to a specific person detection
+- Display a list in the inspector of the dectected persons and their thumbnails
 
 ### Deliverables
 
 Please send via email the following:
 
-- Zipped file containing all the code except build files and package files such as node_modules, or the public link to your project in github.
+- Zipped file containing all the code except build files and package files such as node_modules, or the public link to your project in github. Feel free to submit it as a pull request for this repo too, whatever is easier for you.
 - File(s) containing any wireframes, hand drawings or sketches showing your design decisions. Alternatively, send a shareable link to a web-based design software such a Figma, Sketch, Google Drawings, Adobe XD etc.
 
 ### Constraints, and Targets

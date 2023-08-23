@@ -10,7 +10,7 @@ const persons = require("./data/persons.json");
 const api = express();
 const apiPort = 5678;
 // enable cors from localhost:appPort
-const appPort = 8080;
+const appPort = 5173;
 const cors = require("cors");
 const corsOptions = {
   origin: `http://localhost:${appPort}`,
