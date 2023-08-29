@@ -79,29 +79,16 @@ Cors is set to allow calls from `appPort`, default is `5173`, change if needed i
 
 Vidrovr's Dashboard is our main user-facing product that allows users to upload videos, create input feeds, and view Vidrovr's processing results on those videos.
 
-For this interview, we would like you to re-create a subset of our Dashboard features using our various APIs. We would like you to display a list of detected persons in a video and a playable video.
+For this interview, we would like you to re-create a subset of our Dashboard features using our various APIs. We would like you to display the `title` and `creation_date` of a video and the video itself.
 
-### Schedule
-
-[All times EST]
-
-- 12:00 : Introductions, problem description
-- 12:15 : Begin designing/sketching
-- 12:45 : Review plan with Vidrovr’s Front-end and Backend Team
-- 13:00 : Candidate starts implementation
-- 14:00 : Check-in (optional) - Vidrovr Team Member
-- 15:00 : Check-in (optional) - Vidrovr Team Member
-- 16:00 : Candidate Code Submission
-
-The hourly checking at 14:00 and 15:00 are optional. They are meant to be opportunities for you to ask questions and discuss any technical issues that you might be facing.
 
 ### Details
 
 For the purpose of this project, we use the terms “video” and “asset” interchangeably.
 
-Given this mock API, we would like you to create the Metadata Inspector Page of our Dashboard. The metadata page allows users to view all the extracted insights for a video, in this case, we have provided only the endpoint for recognized people. You can find information on how to install and run locally this API above.
+Given this mock API, we would like you to create the Metadata Inspector Page of our Dashboard. The metadata page allows users to view all the extracted insights for a video, in this case, we have provided the endpoint for recognized people, which you'll only use if you go for the bonus points.
 
-You should leverage this mock API to display the list of available assets (videos) in the form of a list as a landing page, the design is completely free, as long as all the elements are displayed. No pagination required.
+You can find information on how to install and run locally this API above. You should leverage this mock API to display an asset, its title, creation date and a playable video.
 
 #### Metadata Inspector Page
 
@@ -111,17 +98,15 @@ The following metadata should be rendered on this page:
 
 - Video Asset - the main video or image component
 - Asset title
-- Aggregated data of the detections, i.e. how many times each person was detected
-- A plot showing persons versus number of times that person was detected. Design is free, could be bar chart, line, scatter, bubble, etc. your creativity is welcome
+- Asset creation date
 
-Since the metadata inspection page is associated with specific assets retrieved via uuid at `/media/<asset_uid>`. Users should be able to enter an `asset_uid` parameter on the browser URL and have the metadata associated with that video rendered.
+Since the metadata inspection page is associated with specific assets retrieved via uuid at `/media/<asset_uid>`, users should be able to enter an `asset_uid` parameter on the browser URL and have the metadata associated with that video rendered.
 
-The metadata related to the video can be obtained via the `assets/asset_uid` API endpoint. For person detections use `/assets/:asset_uid/persons`.
+The metadata related to the video can be obtained via the `assets/asset_uid` API endpoint.
 
 ### BONUS POINTS
-
-- Display a list of videos sorted in reverse chronological order of creation-date on a separate page accessible at url `/media`. This section of the UI is optional, you may choose to display the results for various videos by simply navigating to their URL directly.
-- Display a list in the inspector of the dectected persons and their thumbnails
+- Display another page (`/media`) with a list of the available assets, clicking on an element of this list routes the user to the inspector page (`/media/<asset_uid>`)
+- Display a list in the inspector of the detected persons and how many times each person was detected. For person detections use GET `/assets/:asset_uid/persons`
 
 ### Deliverables
 
